@@ -1,0 +1,13 @@
+﻿@model List<Beer>
+@{
+    ViewBag.Title = "GetXamound";
+}
+
+<h2>GetXamound</h2>
+
+<ul>
+    @foreach (Beer b in Model)
+    {
+        <li>@b.ID  @b.Name</li>
+    }
+</ul>

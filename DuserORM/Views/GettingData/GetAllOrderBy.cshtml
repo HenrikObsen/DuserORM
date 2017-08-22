@@ -1,0 +1,13 @@
+﻿@model List<Beer>
+@{
+    ViewBag.Title = "GetAllOrderBy";
+}
+
+<h2>GetAllOrderBy</h2>
+
+<ul>
+    @foreach (Beer b in Model)
+    {
+        <li>@b.Name</li>
+    }
+</ul>

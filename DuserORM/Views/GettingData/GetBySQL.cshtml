@@ -1,0 +1,13 @@
+﻿@model List<Beer>
+@{
+    ViewBag.Title = "GetBySQL";
+}
+
+<h2>GetBySQL</h2>
+
+<ul>
+    @foreach (Beer b in Model)
+    {
+    <li>@b.Name</li>
+    }
+</ul>

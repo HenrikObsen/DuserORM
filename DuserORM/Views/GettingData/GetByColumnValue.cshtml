@@ -1,0 +1,13 @@
+﻿@model List<Beer>
+@{
+    ViewBag.Title = "GetByColumnValue";
+}
+
+<h2>GetByColumnValue</h2>
+
+<ul>
+    @foreach (Beer b in Model)
+    {
+        <li>@b.Description</li>
+    }
+</ul>

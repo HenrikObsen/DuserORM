@@ -1,0 +1,13 @@
+﻿@model List<Beer>
+@{
+    ViewBag.Title = "GetAllRows";
+}
+
+<h2>GetAllRows</h2>
+
+<ul>
+    @foreach (Beer b in Model)
+    {
+        <li>@b.Name</li>
+    }
+</ul>
