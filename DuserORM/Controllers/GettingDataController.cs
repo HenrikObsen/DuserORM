@@ -9,6 +9,7 @@ namespace DuserORM.Controllers
     public class GettingDataController : Controller
     {
         BeerFac bf = new BeerFac();
+        CategoryFac cf = new CategoryFac();
 
         public ActionResult GetARow()
         {
@@ -45,6 +46,21 @@ namespace DuserORM.Controllers
             return View(bf.ExecuteSQL<Beer>("select * from Beer"));
         }
 
+        public ActionResult FillViewModel()
+        {
+            int categoryID = 2;
+
+            CategoryVM cvm = new CategoryVM();
+            cvm.category = cf.Get(categoryID);
+            cvm.beers = bf.GetBy("CategoryID", categoryID);
+
+            return View(cvm);
+        }
+
+        public ActionResult InnerJoin()
+        {
+            return View(bf.GetAllBeersWithCategories1());
+        }
 
     }
 }

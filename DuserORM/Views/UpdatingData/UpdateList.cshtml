@@ -1,0 +1,13 @@
+﻿@model List<Category>
+@{
+    ViewBag.Title = "UpdateList";
+}
+
+<h2>UpdateList</h2>
+
+<ul>
+    @foreach (Category c in Model)
+    {
+        <li>@c.Name <a href="/UpdatingData/UpdateForm/@c.ID">Rediger</a></li>
+    }
+</ul>

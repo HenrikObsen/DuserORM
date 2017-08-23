@@ -8,10 +8,24 @@ namespace DuserORM.Controllers
 {
     public class UpdatingDataController : Controller
     {
-        // GET: UpdatingData
-        public ActionResult Index()
+        CategoryFac cf = new CategoryFac();
+
+        public ActionResult UpdateList()
         {
-            return View();
+            return View(cf.GetAll());
+        }
+
+        public ActionResult UpdateForm(int id)
+        {
+            return View(cf.Get(id));
+        }
+
+        public ActionResult UpdateResult(Category c)
+        {
+            cf.Update(c);
+
+            return RedirectToAction("UpdateList");
         }
     }
+
 }

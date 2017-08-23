@@ -1,0 +1,13 @@
+﻿@model List<JoinVM>
+@{
+    ViewBag.Title = "InnerJoin";
+}
+
+<h2>InnerJoin</h2>
+
+<ul>
+    @foreach (JoinVM b in Model)
+    {
+        <li>@b.CategoryName - @b.Name</li>
+    }
+</ul>

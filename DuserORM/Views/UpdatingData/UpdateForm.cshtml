@@ -1,0 +1,17 @@
+﻿@model Category
+@{
+    ViewBag.Title = "UpdateLForm";
+}
+
+<h2>UpdateForm</h2>
+
+
+<form action="/UpdatingData/UpdateResult/" method="POST">
+    Navn: <input name="Name" type="text" value="@Model.Name" required />
+    <br />
+    Sortering:
+    <input name="Sorting" type="number" value="@Model.Sorting" required />
+    <br />
+    <input type="submit" value="Gem" />
+    <input type="hidden" name="ID" value="@Model.ID" />
+</form>

@@ -16,7 +16,7 @@ namespace Duser
     public class AutoFac<T> where T : new()
     {
         private string table;
-        private Mapper<T> mapper = new Mapper<T>();
+        public Mapper<T> mapper = new Mapper<T>();
 
         public AutoFac()
         {

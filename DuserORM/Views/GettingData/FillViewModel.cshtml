@@ -1,0 +1,13 @@
+﻿@model CategoryVM
+@{
+    ViewBag.Title = "FillViewModel";
+}
+
+<h2>@Model.category.Name</h2>
+
+<ul>
+    @foreach (Beer b in Model.beers)
+    {
+        <li>@b.Name</li>
+    }
+</ul>

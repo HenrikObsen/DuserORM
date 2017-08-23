@@ -9,6 +9,19 @@ namespace DuserORM.Controllers
     public class DeletingDataController : Controller
     {
         BeerFac bf = new BeerFac();
+        CategoryFac cf = new CategoryFac();
+
+        public ActionResult DeleteList()
+        {
+            return View(cf.GetAll());
+        }
+
+        public ActionResult Delete(int id)
+        {
+            cf.Delete(id);
+
+            return RedirectToAction("DeleteList");
+        }
 
         public ActionResult DeleteBySQL()
         {

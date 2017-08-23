@@ -8,9 +8,25 @@ namespace DuserORM.Controllers
 {
     public class AddingDataController : Controller
     {
-        // GET: AddingData
-        public ActionResult Index()
+        CategoryFac cf = new CategoryFac();
+
+        public ActionResult Add()
         {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Add(Category c)
+        {
+            if (ModelState.IsValid)
+            {
+                cf.Insert(c);
+                ViewBag.MSG = "Kategorien er oprettet!!!";
+            }
+            else
+            {
+                ViewBag.MSG = "Alle felter skal udfyldes!!!";
+            }
             return View();
         }
     }

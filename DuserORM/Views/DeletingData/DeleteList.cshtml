@@ -1,0 +1,13 @@
+﻿@model List<Category>
+@{
+    ViewBag.Title = "DeleteList";
+}
+
+<h2>DeleteList</h2>
+
+<ul>
+    @foreach (Category c in Model)
+    {
+        <li>@c.Name <a href="/DeletingData/Delete/@c.ID" onclick="return confirm('Vil du slette @c.Name?');">Slet</a></li>
+    }
+</ul>

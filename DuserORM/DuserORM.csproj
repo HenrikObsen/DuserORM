@@ -91,6 +91,53 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\Big\BrownAle.png" />
+    <Content Include="Content\Images\Big\BrunUgle.png" />
+    <Content Include="Content\Images\Big\Canadian.png" />
+    <Content Include="Content\Images\Big\Danger.png" />
+    <Content Include="Content\Images\Big\Deco.png" />
+    <Content Include="Content\Images\Big\Dunkel.png" />
+    <Content Include="Content\Images\Big\GingerLager.png" />
+    <Content Include="Content\Images\Big\Hylde.png" />
+    <Content Include="Content\Images\Big\IPA.png" />
+    <Content Include="Content\Images\Big\Lakrids.png" />
+    <Content Include="Content\Images\Big\Mexican.png" />
+    <Content Include="Content\Images\Big\Mjoed2015.png" />
+    <Content Include="Content\Images\Big\Mjoed2016.png" />
+    <Content Include="Content\Images\Big\NewCasBrown.png" />
+    <Content Include="Content\Images\Big\NewRedIrish.png" />
+    <Content Include="Content\Images\Big\Pilsner.png" />
+    <Content Include="Content\Images\Big\Pitstop.png" />
+    <Content Include="Content\Images\Big\RedAbbey.png" />
+    <Content Include="Content\Images\Big\RedIrish.png" />
+    <Content Include="Content\Images\Big\SmashIPA.png" />
+    <Content Include="Content\Images\Big\Tjekkisk.png" />
+    <Content Include="Content\Images\Big\ToxicWaste.png" />
+    <Content Include="Content\Images\Big\VeinnaLager.png" />
+    <Content Include="Content\Images\Small\BrownAle.png" />
+    <Content Include="Content\Images\Small\BrunUgle.png" />
+    <Content Include="Content\Images\Small\Canadian.png" />
+    <Content Include="Content\Images\Small\Danger.png" />
+    <Content Include="Content\Images\Small\Deco.png" />
+    <Content Include="Content\Images\Small\Dunkel.png" />
+    <Content Include="Content\Images\Small\GingerLager.png" />
+    <Content Include="Content\Images\Small\Hylde.png" />
+    <Content Include="Content\Images\Small\IPA.png" />
+    <Content Include="Content\Images\Small\Lakrids.png" />
+    <Content Include="Content\Images\Small\Mexican.png" />
+    <Content Include="Content\Images\Small\Mjød.png" />
+    <Content Include="Content\Images\Small\Mjød2015.png" />
+    <Content Include="Content\Images\Small\Mjød2016.png" />
+    <Content Include="Content\Images\Small\NewCasBrown.png" />
+    <Content Include="Content\Images\Small\NewRedIrish.png" />
+    <Content Include="Content\Images\Small\Pilsner.png" />
+    <Content Include="Content\Images\Small\Pitstop.png" />
+    <Content Include="Content\Images\Small\RedAbbey.png" />
+    <Content Include="Content\Images\Small\RedIrish.png" />
+    <Content Include="Content\Images\Small\SmashIPA.png" />
+    <Content Include="Content\Images\Small\Tjekkisk.png" />
+    <Content Include="Content\Images\Small\ToxicWaist.png" />
+    <Content Include="Content\Images\Small\ViennaLager.png" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -119,11 +166,14 @@
     <Compile Include="Duser\Conn.cs" />
     <Compile Include="Duser\Mapper.cs" />
     <Compile Include="Factories\BeerFac.cs" />
+    <Compile Include="Factories\CategoryFac.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Beer.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\CategoryVM.cs" />
+    <Compile Include="Models\JoinVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -136,6 +186,12 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\GettingData\GetBySQL.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\GettingData\FillViewModel.cshtml" />
+    <Content Include="Views\GettingData\InnerJoin.cshtml" />
+    <Content Include="Views\AddingData\Add.cshtml" />
+    <Content Include="Views\UpdatingData\UpdateForm.cshtml" />
+    <Content Include="Views\UpdatingData\UpdateList.cshtml" />
+    <Content Include="Views\DeletingData\DeleteList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -145,10 +201,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\AddingData\" />
-    <Folder Include="Views\DeletingData\" />
     <Folder Include="Views\Other\" />
-    <Folder Include="Views\UpdatingData\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

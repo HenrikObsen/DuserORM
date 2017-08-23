@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+}
+
+<h2>Add</h2>
+
+<form action="/AddingData/Add/" method="POST">
+    Navn: <input name="Name" type="text" required />
+    <br />
+    Sortering:
+    <input name="Sorting" type="number" required />
+    <br />
+    <input type="submit" value="Gem" />
+</form>
+@ViewBag.MSG
