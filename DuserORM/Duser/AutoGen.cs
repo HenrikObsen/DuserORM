@@ -6,12 +6,13 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using Duser_ORM_API;
+using System.Net;
 
-// Duser AutoGen 2.0
+// Duser AutoGen 2.1
 // Koden kan bruges fridt så længe denne tekst bliver i toppen af filen.
 // Copyright 2016 E-train I/S, Udviklet af Henrik Obsen
 
-//AutoGen ag = new AutoGen("RepoAM",Request.PhysicalApplicationPath + "App_Data/");
+//AutoGen ag = new AutoGen("NAMESPACE",Request.PhysicalApplicationPath + "App_Data/", true);
 
 //private readonly IHostingEnvironment _hostingEnvironment;
 
@@ -30,14 +31,16 @@ public class AutoGen
 {
 
     private string RepoName = "RepoAM";
+    private bool GetHelperClases = false;
     private SqlCommand CMD;
     private string path;
 
-    public AutoGen(string repoName, string outputPath)
+    public AutoGen(string repoName, string outputPath, bool getHelpers = false)
     {
-     
+
         path = outputPath;
         RepoName = repoName;
+        GetHelperClases = getHelpers;
 
         string SQL = "SELECT Table_Name as Name FROM information_schema.tables";
 
@@ -52,7 +55,26 @@ public class AutoGen
 
         }
 
+        if(GetHelperClases)
+        {
+            GetHelpers();
+        }
         //txtDone.Text += "Done!";
+    }
+
+    private void GetHelpers()
+    {
+        if (!Directory.Exists(path + "/AutoGen/Helpers/"))
+        {
+            DirectoryInfo di = Directory.CreateDirectory(path + "/AutoGen/Helpers/");            
+        }
+
+        WebClient webClient = new WebClient();
+        webClient.DownloadFile("http://duser.net/Download/Helpers/MailFac.txt", path + "/AutoGen/Helpers/MailFac.cs");
+        webClient.DownloadFile("http://duser.net/Download/Helpers/AutoPager.txt", path + "/AutoGen/Helpers/AutoPager.cs");
+        webClient.DownloadFile("http://duser.net/Download/Helpers/FileTool.txt", path + "/AutoGen/Helpers/FileTool.cs");
+        webClient.DownloadFile("http://duser.net/Download/Helpers/Decryper.txt", path + "/AutoGen/Helpers/Decryper.cs");
+        webClient.DownloadFile("http://duser.net/Download/Helpers/Uploader.txt", path + "/AutoGen/Helpers/Uploader.cs");
     }
 
     private void CreateClases(string tableName)
