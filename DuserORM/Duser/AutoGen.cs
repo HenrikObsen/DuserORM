@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Web;
-using Duser_ORM_API;
+using MicksMC;
 using System.Net;
 
 // Duser AutoGen 2.1
@@ -265,21 +265,21 @@ public class AutoGen
 
         strClass += "\t\t [HttpGet] \n";
         strClass += "\t\t [Route(\"" + strName + "/GetAll/{column}/{direction}/{amount}\")] \n";
-        strClass += "\t\t public IEnumerable<Beer> GetAll(string column, string direction, int amount) \n";
+        strClass += "\t\t public IEnumerable<" + strName + "> GetAll(string column, string direction, int amount) \n";
         strClass += "\t\t { \n";
             strClass += "\t\t\t return af.GetAll(column, direction, amount); \n";
         strClass += "\t\t } \n\n";
 
         strClass += "\t\t [HttpGet] \n";
         strClass += "\t\t [Route(\"" + strName + "/GetBy/{column}/{value}\")] \n";
-        strClass += "\t\t public IEnumerable<Beer> GetBy(string column, object value) \n";
+        strClass += "\t\t public IEnumerable<" + strName + "> GetBy(string column, object value) \n";
         strClass += "\t\t { \n";
             strClass += "\t\t\t return af.GetBy(column, value); \n";
         strClass += "\t\t } \n\n";
 
         strClass += "\t\t [HttpGet] \n";
         strClass += "\t\t [Route(\"" + strName + "/GetBy/{column}/{value}/{ordercolumn}/{direction}\")] \n";
-        strClass += "\t\t public IEnumerable<Beer> GetBy(string column, object value, string ordercolumn, string direction) \n";
+        strClass += "\t\t public IEnumerable<" + strName + "> GetBy(string column, object value, string ordercolumn, string direction) \n";
         strClass += "\t\t { \n";
             strClass += "\t\t\t return af.GetBy(column, value, ordercolumn, direction); \n";
         strClass += "\t\t } \n\n";
@@ -315,7 +315,7 @@ public class AutoGen
 
         strClass += "\t\t [HttpPost] \n";
         strClass += "\t\t [Route(\"" + strName + "/Insert\")] \n";
-        strClass += "\t\t public int Insert(Beer model) \n";
+        strClass += "\t\t public int Insert(" + strName + " model) \n";
         strClass += "\t\t { \n";
             strClass += "\t\t\t return af.Insert(model); \n";
         strClass += "\t\t } \n\n";
@@ -323,7 +323,7 @@ public class AutoGen
 
         strClass += "\t\t [HttpPost] \n";
         strClass += "\t\t [Route(\"" + strName + "/Update\")] \n";
-        strClass += "\t\t public void Update(Beer model) \n";
+        strClass += "\t\t public void Update(" + strName + " model) \n";
         strClass += "\t\t { \n";
             strClass += "\t\t\t af.Update(model); \n";
         strClass += "\t\t } \n\n";
