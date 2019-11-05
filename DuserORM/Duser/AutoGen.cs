@@ -8,7 +8,7 @@ using System.Web;
 using MicksMC;
 using System.Net;
 
-// Duser AutoGen 2.1
+// Duser AutoGen 2.2
 // Koden kan bruges fridt så længe denne tekst bliver i toppen af filen.
 // Copyright 2016 E-train I/S, Udviklet af Henrik Obsen
 
@@ -70,11 +70,11 @@ public class AutoGen
         }
 
         WebClient webClient = new WebClient();
-        webClient.DownloadFile("http://duser.net/Download/Helpers/MailFac.txt", path + "/AutoGen/Helpers/MailFac.cs");
-        webClient.DownloadFile("http://duser.net/Download/Helpers/AutoPager.txt", path + "/AutoGen/Helpers/AutoPager.cs");
-        webClient.DownloadFile("http://duser.net/Download/Helpers/FileTool.txt", path + "/AutoGen/Helpers/FileTool.cs");
-        webClient.DownloadFile("http://duser.net/Download/Helpers/Decryper.txt", path + "/AutoGen/Helpers/Decryper.cs");
-        webClient.DownloadFile("http://duser.net/Download/Helpers/Uploader.txt", path + "/AutoGen/Helpers/Uploader.cs");
+        webClient.DownloadFile("https://henrikobsen.dk/Helpers/MailFac.txt", path + "/AutoGen/Helpers/MailFac.cs");
+        webClient.DownloadFile("https://henrikobsen.dk/Helpers/AutoPager.txt", path + "/AutoGen/Helpers/AutoPager.cs");
+        webClient.DownloadFile("https://henrikobsen.dk/Helpers/FileTool.txt", path + "/AutoGen/Helpers/FileTool.cs");
+        webClient.DownloadFile("https://henrikobsen.dk/Helpers/Decryper.txt", path + "/AutoGen/Helpers/Decryper.cs");
+        webClient.DownloadFile("https://henrikobsen.dk/Helpers/Uploader.txt", path + "/AutoGen/Helpers/Uploader.cs");
     }
 
     private void CreateClases(string tableName)
